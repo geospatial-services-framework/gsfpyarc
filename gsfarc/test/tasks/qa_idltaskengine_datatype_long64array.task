@@ -1,0 +1,29 @@
+{
+    "name": "QA_IDLTaskEngine_DataType_Long64Array",
+    "base_class": "IDLTaskFromProcedure",
+    "routine": "qa_idltaskengine_datatype_long64array",
+    "schema": "idltask_1.0",
+    "parameters": [
+        {
+            "name": "INPUT",
+            "direction": "input",
+            "required": true,
+            "type": "LONG64ARRAY",
+            "dimensions": "[*,*,*,*,*,*,*,*]"
+        },
+        {
+            "name": "EXPECT_DIMENSIONS",
+            "direction": "input",
+            "required": true,
+            "type": "LONG64ARRAY",
+            "dimensions": "[*,*,*,*,*,*,*,*]"
+        },        
+        {
+            "name": "OUTPUT",
+            "direction": "output",
+            "required": true,
+            "type": "LONG64ARRAY",
+            "dimensions": "[*,*,*,*,*,*,*,*]"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "QA_IDLTaskEngine_DataType_DoubleArray",
+    "base_class": "IDLTaskFromProcedure",
+    "routine": "qa_idltaskengine_datatype_doublearray",
+    "schema": "idltask_1.0",
+    "parameters": [
+        {
+            "name": "INPUT",
+            "direction": "input",
+            "required": true,
+            "type": "DOUBLEARRAY",
+            "dimensions": "[*,*,*,*,*,*,*,*]"
+        },
+        {
+            "name": "EXPECT_DIMENSIONS",
+            "direction": "input",
+            "required": true,
+            "type": "DOUBLEARRAY",
+            "dimensions": "[*,*,*,*,*,*,*,*]"
+        },        
+        {
+            "name": "OUTPUT",
+            "direction": "output",
+            "required": true,
+            "type": "DOUBLEARRAY",
+            "dimensions": "[*,*,*,*,*,*,*,*]"
+        }
+    ]
+}

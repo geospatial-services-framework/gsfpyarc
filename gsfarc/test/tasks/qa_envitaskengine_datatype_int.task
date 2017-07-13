@@ -1,0 +1,26 @@
+{
+    "name": "QA_ENVITaskEngine_DataType_Int",
+    "displayName": "QA_ENVITaskEngine_DataType_Int",
+    "baseClass": "ENVITaskFromProcedure",
+    "routine": "QA_ENVITaskEngine_DataType_Int",
+    "description": "",
+    "version": "5.3",
+    "parameters": [
+        {
+            "name": "INPUT",
+            "direction": "input",
+            "parameterType": "required",
+            "description": "",
+            "defaultValue": 5,
+            "choiceList": [3,5,7],
+            "dataType": "INT"
+        },
+        {
+            "name": "OUTPUT",
+            "direction": "output",
+            "parameterType": "required",
+            "description": "",
+            "dataType": "INT"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+	"url":"http://localhost:9191",
+	"root": "ese",
+	"serviceName":"ENVI",
+	"alias":"gsf",
+	"outputToolboxName":"test_createtool",
+	"taskName":"ISODATAClassification",
+	"toolboxName":"GSF",
+	"toolName":"CreateTool"
+}

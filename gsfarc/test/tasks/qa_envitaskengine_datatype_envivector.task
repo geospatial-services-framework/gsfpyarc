@@ -1,0 +1,28 @@
+{
+    "name": "qa_envitaskengine_datatype_ENVIVector",
+	"baseClass": "ENVITaskFromProcedure",
+    "routine": "qa_envitaskengine_datatype_envivector",
+    "description": "This task tests ENVIVector data type.",
+    "displayName":"IDL Datatype Test",
+    "invocationType":"keywords",
+    "version":"5.3",
+    "parameters":[
+    {
+      "name":"input",
+      "displayName":"input Vector",
+      "description":"Input Vector",
+      "dataType":"ENVIVector",
+      "direction":"input",
+      "parameterType":"required"
+    },
+    {
+       "name": "output",
+       "displayName": "output vector",
+       "description": "output vector",
+       "metadata": "This is the ENVIVector object to test output",
+       "dataType": "ENVIVector",
+       "direction": "output",
+       "parameterType": "required"
+    }
+  ]
+}

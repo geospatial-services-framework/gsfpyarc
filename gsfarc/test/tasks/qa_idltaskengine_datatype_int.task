@@ -1,0 +1,21 @@
+{
+    "name": "QA_IDLTaskEngine_DataType_Int",
+    "base_class": "IDLTaskFromProcedure",
+    "routine": "qa_idltaskengine_datatype_int",
+    "schema": "idltask_1.0",
+    "parameters": [
+        {
+            "name": "INPUT",
+            "direction": "input",
+            "required": true,
+            "default": 42,
+            "type": "INT"
+        },
+        {
+            "name": "OUTPUT",
+            "direction": "output",
+            "required": true,
+            "type": "INT"
+        }
+    ]
+}

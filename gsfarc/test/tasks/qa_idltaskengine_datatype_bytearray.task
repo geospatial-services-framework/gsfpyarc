@@ -1,0 +1,29 @@
+{
+    "name": "QA_IDLTaskEngine_DataType_ByteArray",
+    "base_class": "IDLTaskFromProcedure",
+    "routine": "qa_idltaskengine_datatype_bytearray",
+    "schema": "idltask_1.0",
+    "parameters": [
+        {
+            "name": "INPUT",
+            "direction": "input",
+            "required": true,
+            "type": "BYTEARRAY",
+            "dimensions": "[*,*,*,*,*,*,*,*]"
+        },
+        {
+            "name": "EXPECT_DIMENSIONS",
+            "direction": "input",
+            "required": true,
+            "type": "BYTEARRAY",
+            "dimensions": "[*,*,*,*,*,*,*,*]"
+        },        
+        {
+            "name": "OUTPUT",
+            "direction": "output",
+            "required": true,
+            "type": "BYTEARRAY",
+            "dimensions": "[*,*,*,*,*,*,*,*]"
+        }
+    ]
+}

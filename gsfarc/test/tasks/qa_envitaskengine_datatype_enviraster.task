@@ -1,0 +1,29 @@
+{
+    "name": "qa_envitaskengine_datatype_enviraster",
+    "baseClass": "ENVITaskFromProcedure",
+    "routine": "qa_envitaskengine_datatype_enviraster",
+    "displayName": "qa_envitaskengine_datatype_enviraster",
+    "description": "qa_envitaskengine_datatype_enviraster",
+    "executionType": "Asynchronous",
+    "version": "5.3",
+    "invocationType": "keywords",
+    "taskReset": "no",
+    "parameters": [
+        {
+            "name": "INPUT",
+            "displayName": "input",
+            "description": "input",
+            "dataType": "ENVIRaster",
+            "direction": "input",
+            "parameterType": "required"
+        },
+        {
+            "name": "OUTPUT",
+            "displayName": "output",
+            "description": "output",
+            "dataType": "ENVIRaster",
+            "direction": "output",
+            "parameterType": "required"
+        }
+    ]
+}

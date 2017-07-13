@@ -1,0 +1,21 @@
+{
+    "name": "QA_IDLTaskEngine_DataType_Boolean",
+    "base_class": "IDLTaskFromProcedure",
+    "routine": "qa_idltaskengine_datatype_boolean",
+    "schema": "idltask_1.0",
+    "parameters": [
+        {
+            "name": "INPUT",
+            "direction": "input",
+            "required": true,
+            "default": false,
+            "type": "BOOLEAN"
+        },
+        {
+            "name": "OUTPUT",
+            "direction": "output",
+            "required": true,
+            "type": "BOOLEAN"
+        }
+    ]
+}

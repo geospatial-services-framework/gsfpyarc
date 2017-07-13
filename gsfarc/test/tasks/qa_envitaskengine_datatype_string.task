@@ -1,0 +1,28 @@
+{
+    "name": "QA_ENVITaskEngine_DataType_String",
+    "displayName": "QA_ENVITaskEngine_DataType_String",
+    "baseClass": "ENVITaskFromProcedure",
+    "routine": "qa_envitaskengine_datatype_string",
+    "description": "",
+    "version": "5.3",
+    "parameters": [
+        {
+            "name": "INPUT",
+            "direction": "input",
+            "parameterType": "required",
+            "description": "",
+            "defaultValue": "cat",
+            "choiceList": ["dog", "cat", "fish"],
+            "dataType": "STRING"
+        },
+        {
+            "name": "OUTPUT",
+            "direction": "output",
+            "parameterType": "required",
+            "description": "",
+            "dataType": "STRING"
+        }
+    ]
+}
+
+

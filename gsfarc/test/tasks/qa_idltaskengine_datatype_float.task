@@ -1,0 +1,20 @@
+{
+    "name": "QA_IDLTaskEngine_DataType_Float",
+    "base_class": "IDLTaskFromProcedure",
+    "routine": "qa_idltaskengine_datatype_float",
+    "schema": "idltask_1.0",
+    "parameters": [
+        {
+            "name": "INPUT",
+            "direction": "input",
+            "required": true,
+            "type": "FLOAT"
+        },
+        {
+            "name": "OUTPUT",
+            "direction": "output",
+            "required": true,
+            "type": "FLOAT"
+        }
+    ]
+}
