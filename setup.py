@@ -43,6 +43,7 @@ with open(os.path.join(here, 'README.rst')) as f:
 setup(name='gsfarc',
       version='1.0.4',
       description='GSF Py Client Utilities for ArcGIS',
+      long_description=long_description,
       author='Exelis Visual Information Solutions, Inc.',
       packages=['gsfarc',
                 'gsfarc.gptool',
