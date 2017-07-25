@@ -46,16 +46,17 @@ setup(name='gsfarc',
       long_description=long_description,
       url='https://github.com/geospatial-services-framework/gsfpyarc',
       author='Exelis Visual Information Solutions, Inc.',
+      author_email='gsf@harris.com',
       packages=['gsfarc',
                 'gsfarc.gptool',
                 'gsfarc.gptool.parameter',
                 'gsfarc.gptool.parameter.templates'],
-      package_dir= {'gsfarc' : 'gsfarc'},
+      package_dir= {'gsfarc': 'gsfarc'},
       install_requires=[
           'gsf>=1.0.0'
       ],
       package_data = {
-          'gsfarc' : [
+          'gsfarc': [
               'esri/toolboxes/*.xml',
               'esri/toolboxes/*.pyt',
               'doc/_images/*',
