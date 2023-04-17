@@ -108,7 +108,7 @@ def create_param_info(task_params):
         gp_param['direction'] = _DIRECTION_MAP[task_param['direction']]
         gp_param['paramType'] = 'Required' if task_param['required'] else 'Optional'
         # GSF output type translates to a derived output type in Arc
-        if gp_param['direction'] is 'Output':
+        if gp_param['direction'] == 'Output':
             gp_param['paramType'] = 'Derived'
 
         gp_param['multiValue'] = True if 'dimensions' in task_param else False
