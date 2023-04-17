@@ -15,10 +15,9 @@ setup(name='gsfarc',
       description='GSF Py Client Utilities for ArcGIS',
       long_description=long_description,
       url='https://github.com/geospatial-services-framework/gsfpyarc',
-      author='Exelis Visual Information Solutions, Inc.',
+      author='NV5 Geospatial',
       author_email='gsf@harris.com',
-      packages=find_packages()
-      package_dir= {'gsfarc': 'gsfarc'},
+      packages=find_packages(),
       install_requires=[
           'gsf>=2.0.0'
       ],
