@@ -19,7 +19,7 @@ setup(name='gsfarc',
       author_email='gsf@harris.com',
       packages=find_packages(),
       install_requires=[
-          'gsf>=2.0.0.dev18'
+          'gsf==3.0.0'
       ],
       package_data = {
           'gsfarc': [
