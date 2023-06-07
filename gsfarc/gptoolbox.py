@@ -104,12 +104,19 @@ class $taskName(object):
     def execute(self, parameters, messages):
         $preExecute
         
+        #For cancelling purpose
+        savedAutoCancelling = arcpy.env.autoCancelling
+        arcpy.env.autoCancelling = False
+        
         #Make the request and wait for success/failure
-        job = self.task.submit(input_params)
+        job = self.task.submit(input_params,inArcGIS=1)
         messages.AddMessage('Submitted Job to: ' + self.task.uri)
         messages.AddMessage('Submit Job ID: ' + str(job.job_id))
 
         job.wait_for_done()
+
+        #Recover autoCancelling
+        arcpy.env.autoCancelling = savedAutoCancelling
         
         if job.status == 'Failed':
             messages.addErrorMessage("Task failed to execute")
