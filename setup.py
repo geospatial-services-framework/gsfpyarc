@@ -11,15 +11,15 @@ with open(os.path.join(here, 'README.md')) as f:
     long_description = f.read()
 
 setup(name='gsfarc',
-      version='2.0.0',
+      version='2.0.1',
       description='GSF Py Client Utilities for ArcGIS',
       long_description=long_description,
       url='https://github.com/geospatial-services-framework/gsfpyarc',
-      author='NV5 Geospatial',
-      author_email='gsf@harris.com',
+      author='NV5 Geospatial Software Solutions',
+      author_email='gsf@nv5.com',
       packages=find_packages(),
       install_requires=[
-          'gsf==2.0.0'
+          'gsf==2.0.1'
       ],
       package_data = {
           'gsfarc': [
