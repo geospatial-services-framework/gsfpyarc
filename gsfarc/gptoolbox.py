@@ -104,8 +104,9 @@ class $taskName(object):
 
     def updateStatus(self,status):
         if arcpy.env.isCancelled :
-            response = self._Server.cancelJob(status['jobId'],raiseErrorIfNotRunning=False)
-            arcpy.AddMessage("Cancel request: "+response['message'])
+            if status['jobStatus'] != 'Failed' and status['jobStatus'] != 'Succeeded' :
+                response = self._Server.cancelJob(status['jobId'],raiseErrorIfNotRunning=False)
+                arcpy.AddMessage("Cancel request: "+response['message'])
             arcpy.ResetProgressor()
         else:
             arcpy.SetProgressorLabel(str(status['jobMessage']) if "jobMessage" in status else "")
@@ -117,13 +118,14 @@ class $taskName(object):
         #For cancelling purpose
         savedAutoCancelling = arcpy.env.autoCancelling
         arcpy.env.autoCancelling = False
-        
+        arcpy.SetProgressor("step")
+
         #Make the request and wait for success/failure
         job = self.task.submit(input_params)
         messages.AddMessage('Submitted Job to: ' + self.task.uri)
         messages.AddMessage('Submit Job ID: ' + str(job.job_id))
 
-        arcpy.SetProgressor("step")
+
         job.wait_for_done(status_callback=self.updateStatus)
 
         #Recover autoCancelling
