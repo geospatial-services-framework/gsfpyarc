@@ -6,11 +6,7 @@ import arcpy
 from gsf import Server
 from gsfarc.gptoolbox import GPToolbox
 
-# Python 3
-try:
-    from urllib.parse import urlparse
-except ImportError:
-    from urlparse import urlparse
+from urllib.parse import urlparse
 
 
 class Toolbox(object):
@@ -86,12 +82,12 @@ class CreateTool(object):
         port = parsed_netloc[1] if len(parsed_netloc) > 1 else '9191'
 
         split_path = parsed_url.path.split('/')
-        if len(split_path) < 5:
+        if len(split_path) < 4:
             messages.addErrorMessage('Task name not found in url.')
             raise arcpy.ExecuteError
 
         task_name = split_path[4]
-        service_name = split_path[3]
+        service_name = split_path[2]
 
         #  Messaging.
         messages.AddMessage('toolbox path: ' + toolbox_path)

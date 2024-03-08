@@ -86,6 +86,7 @@ class $taskName(object):
         self.description = "$taskDescription"
         self.canRunInBackground = $canRunInBackground
         self.task = Task("$taskUri")
+        self._Server = self.task.Server
 
     def getParameterInfo(self):
 
@@ -101,21 +102,41 @@ class $taskName(object):
     def updateMessages(self, parameters):
         return
 
+    def updateStatus(self,status):
+        if arcpy.env.isCancelled :
+            if status['jobStatus'] != 'Failed' and status['jobStatus'] != 'Succeeded' :
+                response = self._Server.cancelJob(status['jobId'],raiseErrorIfNotRunning=False)
+                arcpy.AddMessage("Cancel request: "+response['message'])
+            arcpy.ResetProgressor()
+        else:
+            arcpy.SetProgressorLabel(str(status['jobMessage']) if "jobMessage" in status else "")
+            arcpy.SetProgressorPosition(int(status['jobProgress']))
+        
     def execute(self, parameters, messages):
         $preExecute
         
+        #For cancelling purpose
+        savedAutoCancelling = arcpy.env.autoCancelling
+        arcpy.env.autoCancelling = False
+        arcpy.SetProgressor("step")
+
         #Make the request and wait for success/failure
         job = self.task.submit(input_params)
         messages.AddMessage('Submitted Job to: ' + self.task.uri)
         messages.AddMessage('Submit Job ID: ' + str(job.job_id))
 
-        job.wait_for_done()
+
+        job.wait_for_done(status_callback=self.updateStatus)
+
+        #Recover autoCancelling
+        arcpy.env.autoCancelling = savedAutoCancelling
         
         if job.status == 'Failed':
             messages.addErrorMessage("Task failed to execute")
             messages.addErrorMessage(job.error_message)
             raise arcpy.ExecuteError
 
+        arcpy.ResetProgressor()
         messages.AddMessage('Job Finished')
         task_results = job.results
         $postExecute
