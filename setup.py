@@ -19,7 +19,7 @@ setup(name='gsfarc',
       author_email='gsf@nv5.com',
       packages=find_packages(),
       install_requires=[
-          'gsf==2.0.1'
+          'gsf>=2.0.0'
       ],
       package_data = {
           'gsfarc': [
